@@ -7,7 +7,8 @@ var jwt = require("jsonwebtoken");
 
 const validToken = (req, res, next) => {
   //post
-  if (req.url === "/signin" || req.url === "/signup" ) {
+  console.log("Url:",req.url);
+  if (req.url === "/signin" || req.url === "/signup" || req.url ==="/" ) {
     next();
   } else {
     const token = req.body.headers["x-access-token"];
