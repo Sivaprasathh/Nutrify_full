@@ -40,11 +40,12 @@ mongoose.connect(url, {
 mongoose.connection.on("connected", () => {
   console.log("Connected");
 });
-app.get("/*", (req, res) => {
-  res.sendFile(__dirname + "/nutrify_react/build/index.html");
-});
+
 
 app.use("/", allRoutes);
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/nutrify_react/build/index.html");
+});
 
 /*app.get("/check",(req,res)=>{
 
