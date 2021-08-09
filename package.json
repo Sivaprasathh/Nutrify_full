@@ -4,10 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "yarn add --prefix client",
     "start": "node index.js",
-   
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "client": "yarn start --prefix client",
+    "heroku-postbuild":"set NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false yarn add --prefix client && yarn build --prefix client"
+  
+  },
+  "engines": {
+    "node": "14.15.4"
   },
   "dependencies": {
     "axios": "^0.21.1",
