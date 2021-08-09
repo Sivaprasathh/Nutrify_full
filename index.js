@@ -49,6 +49,6 @@ app.get("/*", (req, res) => {
 
 res.send({name:"Siva"});	
 })*/
-app.listen(4000, function () {
+app.listen(process.env.PORT || 4000, function () {
   console.log("Sever Running");
 });
