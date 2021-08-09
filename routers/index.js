@@ -7,7 +7,7 @@ var jwt = require("jsonwebtoken");
 
 const validToken = (req, res, next) => {
   //post
-  if (req.url === "/signin" || req.url === "/signup" || req.url === "https://nutrifyfull.herokuapp.com/") {
+  if (req.url === "/signin" || req.url === "/signup" ) {
     next();
   } else {
     const token = req.body.headers["x-access-token"];
