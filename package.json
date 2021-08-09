@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "client-install": "yarn install --prefix client",
+    "client-build":"cd nutrify_react && yarn build",
+    "client-install": "cd nutrify_react && yarn install",
     "start": "node index.js",
     "client": "yarn start --prefix client",
-    "heroku-postbuild":"YARN_PRODUCTION=true"
+    "heroku-postbuild":"yarn run client-install && yarn run client-build"
   
   },
   "engines": {
